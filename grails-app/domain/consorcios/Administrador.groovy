@@ -8,6 +8,12 @@ class Administrador {
     Integer edad
     String email
 
+    Set<Edificio> edificios = []
+
+    static hasMany = [
+      edificios: Edificio,
+    ]
+
     static constraints = {
       nombre blank: false, nullable: false
       apellido blank: false, nullable: false
