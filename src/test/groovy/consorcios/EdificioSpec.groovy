@@ -12,7 +12,5 @@ class EdificioSpec extends Specification implements DomainUnitTest<Edificio> {
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

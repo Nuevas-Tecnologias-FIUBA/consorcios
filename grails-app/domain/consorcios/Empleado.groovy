@@ -1,6 +1,6 @@
 package consorcios
 
-class Empleado {
+class Empleado extends Usuario {
 
     String nombre
     String apellido

@@ -12,7 +12,5 @@ class ProveedorSpec extends Specification implements DomainUnitTest<Proveedor> {
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

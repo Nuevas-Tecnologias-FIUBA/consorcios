@@ -8,5 +8,5 @@ class Contrato {
   Date alta
   Date vigencia
 
-  Dinero monto
+  // Dinero monto
 }

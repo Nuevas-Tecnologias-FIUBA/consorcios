@@ -12,7 +12,5 @@ class PropietarioSpec extends Specification implements DomainUnitTest<Propietari
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

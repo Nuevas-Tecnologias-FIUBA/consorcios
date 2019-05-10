@@ -12,7 +12,5 @@ class PruebaControllerSpec extends Specification implements ControllerUnitTest<P
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

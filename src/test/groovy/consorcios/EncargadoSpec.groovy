@@ -12,7 +12,5 @@ class EncargadoSpec extends Specification implements DomainUnitTest<Encargado> {
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

@@ -12,7 +12,5 @@ class UnidadFuncionalSpec extends Specification implements DomainUnitTest<Unidad
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

@@ -12,7 +12,5 @@ class PruebaServiceSpec extends Specification implements ServiceUnitTest<PruebaS
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == false
     }
 }

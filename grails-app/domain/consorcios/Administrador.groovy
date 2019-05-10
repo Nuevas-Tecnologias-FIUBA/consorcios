@@ -1,6 +1,6 @@
 package consorcios
 
-class Administrador {
+class Administrador extends Usuario {
 
     String nombre
     String apellido
@@ -20,5 +20,10 @@ class Administrador {
       matricula blank: false, nullable: false
       edad nullable: false, min: 18
       email nullable: false, email: true
+    }
+
+    void administrar(Edificio edificio) {
+      if (this.edificios.size() >= 3) throw new IllegalStateException("ya administras muchos edificios")
+      this.edificios << edificio
     }
 }

@@ -1,6 +1,64 @@
 package consorcios
 
+class RegistracionCommand {
+
+  String username
+  String email
+
+  static constraints = {
+    username blank: false, nullable: false
+    email blank: false, nullable: false, email: true
+  }
+}
+
+
+import groovy.json.JsonOutput
+
+class Temp {
+  def dist
+}
+
 class PruebaController {
+
+    def pruebaService
+
+    def temperatura() {
+      // def a = new URL('https://ws.smn.gob.ar/map_items/weather').text
+      def a = new groovy.json.JsonSlurper().parseText(new URL('https://ws.smn.gob.ar/map_items/weather').text)
+      // def b = JsonOutput.prettyPrint(a)
+      def temp = new Temp(dist: a[0].dist)
+      render "<pre>${temp.dist}</pre>"
+    }
+
+    def registrar(RegistracionCommand cmd) {
+      if (!cmd.hasErrors()) {
+        pruebaService.registrar(cmd.username)
+        render "ok"
+      } else {
+        render "hay errores=${cmd.errors}"
+      }
+    }
+
+    def listar() {
+      def a = [
+        usuarios: Usuario.list(),
+        administradores: Administrador.list(),
+        empleados: Empleado.list(),
+      ]
+      render "${a}"
+    }
+
+    def crear() {
+      new Usuario(username: 'pepito').save()
+      new Administrador(
+        username: 'pepito',
+        nombre: 'nombre',
+        apellido: 'apellido',
+        matricula: 'matricula',
+        edad: 20,
+        email: 'email@email.com',
+      ).save()
+    }
 
     def index() {
       render """
